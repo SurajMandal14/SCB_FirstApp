@@ -45,16 +45,19 @@ Imagine you have a big box of transaction receipts. Our program is like a super-
 
 ```
 .
+├── archive/
+├── assets/
+├── configs/
 ├── data/
 │   └── mock_transactions.csv
-├── models/
-│   └── ml_models.py
+├── docs/
+├── logs/
 ├── src/
-│   └── generate_mock_data.py
-├── ui/
-│   └── pyqt_app.py
-├── outputs/
-├── streamlit_app.py
+│   ├── generate_mock_data.py
+│   ├── ml_models.py
+│   ├── pyqt_app.py
+│   └── streamlit_app.py
+├── .gitignore
 ├── requirements.txt
 └── README.md
 ```
@@ -88,13 +91,13 @@ This will create `mock_transactions.csv` in the `data` directory.
 ### 4. Run the Streamlit Web App
 
 ```bash
-streamlit run streamlit_app.py
+streamlit run src/streamlit_app.py
 ```
 
 ### 5. Run the PyQt5 Desktop App
 
 ```bash
-python ui/pyqt_app.py
+python src/pyqt_app.py
 ```
 
 ## How to Package into an Executable (.exe)
@@ -106,7 +109,7 @@ You can use PyInstaller to package both the Streamlit and PyQt5 applications int
 This is the more straightforward of the two.
 
 ```bash
-pyinstaller --onefile --windowed --name "TransactionDashboard" ui/pyqt_app.py
+pyinstaller --onefile --windowed --name "TransactionDashboard" src/pyqt_app.py
 ```
 
 - `--onefile`: Creates a single executable file.
@@ -123,7 +126,7 @@ Packaging a Streamlit app is more complex because it runs as a web server. A com
 
 ```batch
 @echo off
-streamlit run streamlit_app.py
+streamlit run src/streamlit_app.py
 ```
 
 **2. Package the script with PyInstaller:**

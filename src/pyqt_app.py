@@ -6,13 +6,7 @@ from PyQt5.QtCore import QAbstractTableModel, Qt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import numpy as np
-import os
-
-# Add the project root to the Python path
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(project_root)
-
-from models.ml_models import detect_anomalies, segment_users, detect_fraud_rules, train_forecasting_model
+from ml_models import detect_anomalies, segment_users, detect_fraud_rules, train_forecasting_model
 
 class PandasModel(QAbstractTableModel):
     """A model to interface a pandas DataFrame with QTableView."""

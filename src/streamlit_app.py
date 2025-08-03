@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from models.ml_models import detect_anomalies, segment_users, detect_fraud_rules, train_forecasting_model
+from ml_models import detect_anomalies, segment_users, detect_fraud_rules, train_forecasting_model
 import numpy as np
 
 st.set_page_config(layout="wide")
